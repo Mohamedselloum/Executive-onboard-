@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 220 40% 15%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 220 40% 15%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 40% 15%;
+    
+    --primary: 215 90% 50%;
+    --primary-foreground: 210 40% 98%;
+    
+    --secondary: 262 83% 58%;
+    --secondary-foreground: 210 40% 98%;
+    
+    --muted: 220 10% 94%;
+    --muted-foreground: 220 10% 40%;
+    
+    --accent: 262 83% 58%;
+    --accent-foreground: 210 40% 98%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 220 13% 90%;
+    --input: 220 13% 90%;
+    --ring: 215 90% 50%;
+    
+    /* Chart colors */
+    --chart-1: 215 90% 50%;
+    --chart-2: 262 83% 58%;
+    --chart-3: 190 95% 39%;
+    --chart-4: 30 95% 60%;
+    --chart-5: 0 84% 60%;
+    
+    /* Sidebar colors */
+    --sidebar-background: 215 30% 25%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 215 90% 50%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 262 83% 65%;
+    --sidebar-accent-foreground: 220 10% 10%;
+    --sidebar-border: 215 25% 32%;
+    --sidebar-ring: 215 90% 70%;
+    
+    --radius: 0.75rem;
+  }
+  
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+  
+  /* Add smooth scrolling for a more modern feel */
+  .scroll-container {
+    @apply overflow-auto overscroll-none;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Custom scrollbar for modern browsers */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full transition-colors hover:bg-muted-foreground/50;
+  }
+  
+  /* Animations for scroll-triggered elements */
+  .fade-in-up {
+    @apply opacity-0 translate-y-4 transition-all duration-500 ease-out;
+  }
+  
+  .fade-in-up.appear {
+    @apply opacity-100 translate-y-0;
+  }
+}
+
+/* Product rating stars */
+.stars {
+  @apply inline-flex text-yellow-400;
+}
+
+/* Custom shadow for hovering over cards */
+.hover-shadow {
+  @apply transition-shadow duration-300;
+}
+
+.hover-shadow:hover {
+  @apply shadow-lg;
+}
+
+/* Custom shadow for dropship badges */
+.dropship-badge {
+  @apply bg-blue-100 text-blue-800 font-medium;
+}
+
+/* Custom styling for special offer banners */
+.offer-gradient {
+  @apply bg-gradient-to-r from-primary to-primary/70;
+}
+
+/* Custom styling for discount badges */
+.discount-badge {
+  @apply bg-destructive text-white font-medium;
+}
